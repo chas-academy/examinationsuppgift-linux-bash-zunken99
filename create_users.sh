@@ -62,7 +62,7 @@ do
 	
 	#lägg till andra användare
 	
-	for user in $(cut -d: -f1 /etc/passwd)
+	for user in $(awk -F: '$3 >= 1000 {print $1}' /etc/passwd)
 	do
 		if [ "$user" != "$username" ]; then
 			echo "$user" >> "$home_dir/welcome.txt"
