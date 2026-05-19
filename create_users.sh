@@ -73,7 +73,7 @@ do
 	#Sätt ägare och rättigheter på filen
 	
 	chown "$username:$username" "$home_dir/welcome.txt"
-	chmod 400 "$home_dir/welcome.txt"
+	chmod 600 "$home_dir/welcome.txt"
 	
 	echo "Användare $username skapad."
 done
