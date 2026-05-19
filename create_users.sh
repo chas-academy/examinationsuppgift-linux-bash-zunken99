@@ -21,11 +21,10 @@ if [ $# -eq 0 ]; then
 	exit 1
 fi
 
-#Hämta lista med befintliga användare
-
-existing_users=$(cut -d: -f1 /etc/psswd)
 
 # Loopar alla args
+
+
 
 for username in "$@"
 do
@@ -59,12 +58,17 @@ do
 	chmod 700 "$home_dir/Work"
 
 	# Skapa welcome.txt
+	echo "Välkommen $username" > "$home_dir/welcome.txt"
 	
+	#lägg till andra användare
+	
+	for user in $(cut -d: -f1 /etc/passwd)
+	do
+		if [ "$user" != "$username" ]; then
+			echo "$user" >> "$home_dir/welcome.txt"
+		fi
+	done
 
-	{ 
-		echo "Välkommen $username"
-		echo "$existing_users"
-	} > "$home_dir/welcome.txt"
 
 	#Sätt ägare och rättigheter på filen
 	
