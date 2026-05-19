@@ -60,14 +60,11 @@ do
 
 	# Skapa welcome.txt
 	
-	echo "Välkommen $username" > "$home_dir/welcome.txt"
 
-	for user in $(cut -d -f1 /etc/passwd)
-	do
-		if [ "$user" != "$username" ]; then
-			echo "user" >> "$home_dir/welcome.txt"
-		fi
-	done
+	{ 
+		echo "Välkommen $username"
+		echo "$existing_users"
+	} > "$home_dir/welcome.txt"
 
 	#Sätt ägare och rättigheter på filen
 	
