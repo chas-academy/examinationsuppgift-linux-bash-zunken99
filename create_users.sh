@@ -46,7 +46,7 @@ do
 	#skapa mappar
 	mkdir -p "$home_dir/Documents"
 	mkdir -p "$home_dir/Downloads"
-	mkdir -p "$home_dir/Workspace"
+	mkdir -p "$home_dir/Work"
 
 
 	# Sätt ägare
@@ -56,7 +56,7 @@ do
 	# Rättigheter
 	chmod 700 "$home_dir/Documents"
 	chmod 700 "$home_dir/Downloads"
-	chmod 700 "$home_dir/Workspace"
+	chmod 700 "$home_dir/Work"
 
 	# Skapa welcome.txt
 	
