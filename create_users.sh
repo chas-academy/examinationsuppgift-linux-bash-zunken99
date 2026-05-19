@@ -17,7 +17,7 @@ fi
 # kontrollera att minst en användare matats in
 
 if [ $# -eq 0 ]; then
-	echo "Användning: $0 användare1 användare2 ..."
+	echo "Fel, vänligen mata in användare."
 	exit 1
 fi
 
